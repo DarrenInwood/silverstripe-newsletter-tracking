@@ -6,17 +6,17 @@
  */
 class NewsletterLinkView extends DataObject {
 
-	public static $db = array(
+	private static $db = array(
 		'IP' => 'Varchar(39)'
 	);
 
-	public static $has_one = array(
+	private static $has_one = array(
 		'Link'       => 'Newsletter_TrackedLink',
 		'Newsletter' => 'Newsletter',
 		'Member'     => 'Member'
 	);
 
-	public static $summary_fields = array(
+	private static $summary_fields = array(
 		'CreatedNice'   => 'Time',
 		'Link.Original' => 'Link',
 		'Member.ID'     => 'Member ID',

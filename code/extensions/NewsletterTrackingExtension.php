@@ -4,21 +4,18 @@
  *
  * @package silverstripe-newsletter-tracking
  */
-class NewsletterTrackingExtension extends DataObjectDecorator {
+class NewsletterTrackingExtension extends DataExtension {
 
-	public function extraStatics() {
-		return array(
-			'db'       => array(
-				'Token' => 'Varchar(32)'
-			),
-			'has_many' => array(
-				'Views'     => 'NewsletterView',
-				'LinkViews' => 'NewsletterLinkView'
-			)
-		);
-	}
+	private static $db = array(
+		'Token' => 'Varchar(32)',
+	);
 
-	public function updateCMSFields(FieldSet $fields) {
+	private static $has_many = array(
+		'Views'     => 'NewsletterView',
+		'LinkViews' => 'NewsletterLinkView',
+	);
+
+	public function updateCMSFields(FieldList $fields) {
 		$fields->replaceField('TrackedLinks', $tracked = new TableListField(
 			'LinkViews',
 			'NewsletterLinkView',

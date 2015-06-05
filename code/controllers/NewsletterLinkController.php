@@ -6,12 +6,12 @@
  */
 class NewsletterLinkController extends Controller {
 
-	public static $url_handlers = array(
+	private static $url_handlers = array(
 		'$User!/$Hash!' => 'handleUserLink',
 		'$Hash!'        => 'handleLink'
 	);
 
-	public static $allowed_actions = array(
+	private static $allowed_actions = array(
 		'handleLink',
 		'handleUserLink'
 	);

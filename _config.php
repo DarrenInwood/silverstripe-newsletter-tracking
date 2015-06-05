@@ -3,7 +3,7 @@
  * @package silverstripe-newsletter-tracking
  */
 
-Director::addRules(50, array(
+Director::addRules(100, array(
 	'newsletter-link' => 'NewsletterLinkController',
 	'newsletter-view' => 'NewsletterViewController'
 ));

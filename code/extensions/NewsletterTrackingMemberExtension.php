@@ -4,13 +4,11 @@
  *
  * @package silverstripe-newsletter-tracking
  */
-class NewsletterTrackingMemberExtension extends DataObjectDecorator {
+class NewsletterTrackingMemberExtension extends DataExtension {
 
-	public function extraStatics() {
-		return array('db' => array(
-			'NewsletterTrackingToken' => 'Varchar(32)'
-		));
-	}
+	private static $db = array(
+		'NewsletterTrackingToken' => 'Varchar(32)',
+	);
 
 	public function onBeforeWrite() {
 		if (!$this->owner->NewsletterTrackingToken) {

@@ -5,15 +5,13 @@
  *
  * @package silverstripe-newsletter-tracking
  */
-class NewsletterTrackedLinkTrackingExtension extends DataObjectDecorator {
+class NewsletterTrackedLinkTrackingExtension extends DataExtension {
 
-	public function extraStatics() {
-		return array('many_many' => array(
-			'ViewedMembers' => 'Member'
-		));
-	}
+	private static $many_many = array(
+		'ViewedMembers' => 'Member'
+	);
 
-	public function updateCMSFields(FieldSet $fields) {
+	public function updateCMSFields(FieldList $fields) {
 		$fields->removeByName('Hash');
 
 		$fields->replaceField('ViewedMembers', $members = new TableListField(

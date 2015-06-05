@@ -7,11 +7,11 @@
  */
 class NewsletterViewController extends Controller {
 
-	public static $url_handlers = array(
+	private static $url_handlers = array(
 		'$Newsletter!/$User!' => 'handleView'
 	);
 
-	public static $allowed_actions = array(
+	private static $allowed_actions = array(
 		'handleView'
 	);
 

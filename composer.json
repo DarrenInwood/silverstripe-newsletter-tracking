@@ -1,0 +1,24 @@
+{
+	"name": "ajshort/silverstripe-newsletter-tracking",
+	"description": "SilverStripe Newsletter Tracking module",
+	"type": "silverstripe-module",
+	"keywords": ["silverstripe", "newsletter", "history"],
+	"license": "SilverStripe Newsletter Tracking Module License",
+	"authors": [
+		{
+			"name": "Andrew Short",
+			"email": "andrewjshort@gmail.com"
+		}
+	],
+	"require": {
+		"silverstripe/cms": ">=3.1",
+		"silverstripe/framework": ">=3.1",
+		"silverstripe/newsletter": ">=0.6.1"
+	},
+	"extra": {
+		"installer-name": "newsletter-tracking",
+		"branch-alias": {
+			"dev-master": "1.0.x-dev"
+		}
+	}
+}
